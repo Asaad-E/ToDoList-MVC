@@ -4,7 +4,7 @@ A minimalist to-do list application developed entirely with vanilla JavaScript, 
 
 ## 📸 Demo
 
-Try the [Online Version](google.com)
+Try the [Online Version](https://asaad-todo-list-javascript.netlify.app/)
 
 ![app](./media/app.png)
 
@@ -15,6 +15,7 @@ Try the [Online Version](google.com)
 3. To mark a task as completed, click on the checkbox
 4. To delete a task, click on the delete icon
 5. Drag and drop tasks to reorder them
+6. Use the filter bellow to see all task active o completed
 
 ## 💾 Main Features
 
