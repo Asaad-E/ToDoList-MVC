@@ -1,0 +1,258 @@
+/* -------------- Reset CSS -------------- */
+
+* {
+  margin: 0px;
+  padding: 0px;
+
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: "Nunito", serif;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 1.6rem;
+}
+
+:root {
+  --primary-color: #5b1865;
+  --secondary-color: rgba(114, 9, 183, 1);
+
+  --blue: rgba(67, 97, 238, 1);
+
+  --white: #fefefe;
+  --gray: #ededed;
+  --dark-gray: #c2c2c2;
+  --black: #333;
+}
+
+/* -------------- HEADER and CONTAINER --------------*/
+
+body {
+  background: rgb(109, 35, 182);
+  background: linear-gradient(
+    0deg,
+    var(--secondary-color) 0%,
+    var(--primary-color) 100%
+  );
+
+  min-height: 100vh;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* -------------- To Do List --------------*/
+
+.todo-list {
+  width: 90%;
+  max-width: 900px;
+
+  margin-top: 1rem;
+  padding: 2rem 0;
+
+  color: var(--white);
+}
+
+/* -------- title-------- */
+.todo-list__header-title {
+  text-align: center;
+
+  font-size: 4rem;
+  margin-bottom: 2rem;
+}
+
+/* -------- input-------- */
+.todo-list__input {
+  width: 100%;
+
+  height: 3rem;
+  padding: 2.5rem 2rem;
+
+  font-size: 2rem;
+  text-align: center;
+
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+
+  border-radius: 0.6rem;
+  border: none;
+  outline: none;
+}
+
+/* -------- body and container -------- */
+.todo-list__body {
+  width: 100%;
+
+  border-radius: 0.2rem;
+  background-color: var(--white);
+
+  color: var(--black);
+}
+
+.todo-list__list-container {
+  display: flex;
+  flex-direction: column;
+}
+
+/* -------- todo -------- */
+
+.todo-list__todo {
+  display: grid;
+  grid-template-columns: 3rem 1fr 3rem;
+
+  font-size: 2rem;
+  padding: 2rem 2rem;
+
+  border-bottom: 1px solid var(--gray);
+}
+
+.todo-list__todo:hover {
+  background-color: var(--gray);
+}
+
+/* -------- todo - check -------- */
+.todo-list__todo__check {
+  display: block;
+
+  width: 1.5rem;
+  aspect-ratio: 1/1;
+
+  background: linear-gradient(var(--white), var(--white)) padding-box,
+    linear-gradient(149deg, rgba(67, 97, 238, 1) 0%, rgba(114, 9, 183, 1) 100%),
+    border-box;
+  border-radius: 50%;
+  border: 1px solid transparent;
+
+  border-radius: 50%;
+  align-self: center;
+  justify-self: left;
+
+  cursor: pointer;
+}
+
+/* -------- todo - delete -------- */
+
+.todo-list__todo__delete {
+  justify-self: end;
+  align-self: center;
+
+  color: var(--dark-gray);
+  font-weight: bold;
+
+  font-size: 2.5rem;
+  line-height: 2rem;
+
+  cursor: pointer;
+}
+
+/* -------- todo - completed -------- */
+
+.todo-list__todo--completed {
+  color: var(--dark-gray);
+}
+
+.todo-list__todo--completed .todo-list__todo__check {
+  background: none;
+  background: linear-gradient(
+    149deg,
+    rgba(67, 97, 238, 1) 0%,
+    rgba(114, 9, 183, 1) 100%
+  );
+
+  background-clip: padding-box;
+
+  border: 0.1rem solid transparent;
+}
+
+.todo-list__todo--completed .todo-list__todo__text {
+  text-decoration: line-through;
+}
+/* -------- options -------- */
+
+.todo-list__options {
+  display: flex;
+  justify-content: space-around;
+
+  padding: 1.5rem 0rem;
+
+  border-top: 1px solid var(--gray);
+
+  font-size: 1.6rem;
+
+  color: var(--black);
+
+  text-align: center;
+  text-transform: capitalize;
+}
+/* -------- options - left -------- */
+
+.todo-list__left-text {
+  user-select: none;
+}
+
+.all-completed.todo-list__left {
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+/* -------- options - filter -------- */
+
+.todo-list__filters {
+  display: flex;
+  gap: 1rem;
+
+  user-select: none;
+}
+
+.todo-list__filters span {
+  cursor: pointer;
+}
+
+.todo-list__filters .active {
+  color: var(--primary-color);
+  font-weight: bold;
+}
+/* -------- options - clear -------- */
+
+.todo-list__clear {
+  cursor: pointer;
+  user-select: none;
+}
+
+/* -------- instruction -------- */
+
+.instruction {
+  color: var(--white);
+
+  margin-bottom: 2rem;
+}
+
+/* -------- media queries -------- */
+
+@media (max-width: 500px) {
+  .todo-list__options {
+    flex-wrap: wrap;
+  }
+
+  .todo-list__left {
+    flex: 50%;
+  }
+
+  .todo-list__clear {
+    flex: 50%;
+  }
+
+  .todo-list__filters {
+    margin-top: 2rem;
+    order: 3;
+  }
+}

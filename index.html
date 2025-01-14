@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To Do List</title>
+
+    <link rel="stylesheet" href="style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Press+Start+2P&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header class="header"></header>
+
+    <section class="container">
+      <main class="todo-list">
+        <header class="todo-list__header">
+          <h1 class="todo-list__header-title">To Do List</h1>
+          <span class="todo-list__header-mode"></span>
+        </header>
+
+        <input
+          type="text"
+          class="todo-list__input"
+          placeholder="Create a ToDo"
+        />
+
+        <section class="todo-list__body">
+          <div class="todo-list__list-container"></div>
+
+          <div class="todo-list__options">
+            <span class="todo-list__left">
+              <span class="todo-list__left-count">5</span>
+              <span class="todo-list__left-text">items left</span>
+            </span>
+
+            <span class="todo-list__filters">
+              <span class="todo-list__filters-all active">All</span>
+              <span class="todo-list__filters-active">Active</span>
+              <span class="todo-list__filters-completed">Completed</span>
+            </span>
+
+            <span class="todo-list__clear"> clear Completed </span>
+          </div>
+        </section>
+      </main>
+    </section>
+  </body>
+</html>
