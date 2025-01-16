@@ -113,14 +113,19 @@ body {
   padding: 2rem 2rem;
 
   border-bottom: 1px solid var(--gray);
+  background-color: var(--white);
 }
 
 .todo-list__todo:hover {
   background-color: var(--gray);
 }
 
-.todo-list__todo--hold {
-  opacity: 0.8;
+.todo-list__todo.todo-list__todo--hold {
+  opacity: 1;
+  background-color: var(--gray);
+  -webkit-user-drag: none;
+  -moz-user-select: none;
+  user-select: none;
 }
 
 .todo-list__todo--hovered {
@@ -145,6 +150,13 @@ body {
   justify-self: left;
 
   cursor: pointer;
+  pointer-events: none;
+}
+
+/* -------- todo - text -------- */
+
+.todo-list__todo__text {
+  pointer-events: none;
 }
 
 /* -------- todo - delete -------- */
@@ -160,6 +172,7 @@ body {
   line-height: 2rem;
 
   cursor: pointer;
+  pointer-events: none;
 }
 
 /* -------- todo - completed -------- */
