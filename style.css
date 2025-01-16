@@ -119,6 +119,14 @@ body {
   background-color: var(--gray);
 }
 
+.todo-list__todo--hold {
+  opacity: 0.8;
+}
+
+.todo-list__todo--hovered {
+  background-color: var(--gray);
+}
+
 /* -------- todo - check -------- */
 .todo-list__todo__check {
   display: block;

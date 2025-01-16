@@ -152,9 +152,29 @@ function addTaskUI(task) {
 
   todoContainer.insertAdjacentHTML("beforeend", taskElement);
 
-  document.getElementById(task.index).addEventListener("dragstart", (event) => {
+  const element = document.getElementById(task.index);
+
+  element.addEventListener("dragstart", (event) => {
     console.log(`Now dragged element index = ${task.index}`);
     event.dataTransfer.setData("text/plain", task.index);
+
+    element.classList.add("todo-list__todo--hold");
+  });
+
+  element.addEventListener("dragend", () => {
+    element.classList.remove("todo-list__todo--hold");
+  });
+
+  element.addEventListener("dragenter", (e) => {
+    e.preventDefault();
+
+    document
+      .querySelectorAll(".todo-list__todo")
+      .forEach((element) =>
+        element.classList.remove("todo-list__todo--hovered")
+      );
+    element.classList.add("todo-list__todo--hovered");
+    console.log("enter");
   });
 }
 
@@ -264,6 +284,9 @@ todoContainer.addEventListener("dragover", (event) => {
 todoContainer.addEventListener("drop", (event) => {
   event.preventDefault();
 
+  document
+    .querySelectorAll(".todo-list__todo")
+    .forEach((element) => element.classList.remove("todo-list__todo--hovered"));
   // Dragged Element
   const draggedIndex = Number(event.dataTransfer.getData("text/plain"));
   const draggedElement = document.getElementById(draggedIndex);
